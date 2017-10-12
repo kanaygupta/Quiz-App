@@ -1,0 +1,36 @@
+<% provide(:title, @quiz.name) %>
+<div class="row">
+  <aside class="col-md-12">
+
+    <section class="quiz_info">
+      <h1>OVERVIEW OF THE QUIZ</h1>
+      <h1>
+        <%= @quiz.name %>
+      </h1>
+      <table class="table table-striped table-bordered table-hover" style="width: 100%"><thead>
+      <tr>
+        <th>Question</th>
+        <th>Option A</th>
+        <th>Option B</th>
+        <th>Option C</th>
+        <th>Option D</th>
+        <th>Answer</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <% @questions.each do |f| %>
+            <tr>
+              <td><%= f.content %></td>
+              <td><%= f.option_a %></td>
+              <td><%= f.option_b %></td>
+              <td><%= f.option_c %></td>
+              <td><%= f.option_d %></td>
+              <td><%= f.answer %></td>
+            </tr>
+      <% end %>
+      </tbody>
+      </table>
+    </section>
+  </aside>
+</div>

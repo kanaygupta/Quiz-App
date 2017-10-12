@@ -1,0 +1,8 @@
+<tr>
+  <td><%=quiz.name%></td>
+  <td><%= link_to "Play", play_path(quiz) %></td>
+  <td><%= link_to "View Leaderboard",leadquiz_path(quiz)%></td>
+  <% if current_user.admin? %>
+  <td><%= link_to "Delete", quiz, method: :delete,data: { confirm: "You sure?" } %></td>
+  <% end %>
+</tr>

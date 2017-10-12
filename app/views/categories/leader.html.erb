@@ -1,0 +1,29 @@
+<% provide(:title, @category.name) %>
+<div class="row">
+  <aside class="col-md-12">
+    <section class="category_info">
+      <h1 style="text-align: center;font-size:50px">
+        Leaderboard:<%= @category.name %>
+      </h1>
+
+      <table class="table table-striped table-bordered table-hover" style="table-layout: fixed">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @leaderboard.each do |f| %>
+          <% @user=User.find(f.user_id)%>
+          <tr>
+            <td><%=@user.name%></td>
+            <td><%= f.actscore %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+    </section>
+  </aside>
+</div>

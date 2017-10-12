@@ -1,0 +1,8 @@
+<tr>
+  <td><%=category.name%></td>
+  <td><%= link_to "View Subcategories", category %></td>
+  <td><%= link_to "View Leaderboard",leadcat_path(category) %></td>
+  <% if current_user.admin? %>
+      <td><%= link_to "Delete", category, method: :delete,data: { confirm: "You sure?" } %></td>
+  <% end %>
+</tr>

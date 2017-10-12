@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subcategory: one
+  user: one
+  actscore: 1
+
+two:
+  subcategory: two
+  user: two
+  actscore: 1

@@ -1,0 +1,26 @@
+<% provide(:title, 'AddQuestion') %>
+<h1>Add Question</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@question) do |f| %>
+        <%= f.label :quiz_id %>
+        <%= f.select :quiz_id,@array %>
+        <%= f.label :content %>
+        <%= f.text_field :content, class: 'form-control' %>
+        <%= f.label :option_a %>
+        <%= f.text_field :option_a, class: 'form-control' %>
+        <%= f.label :option_b %>
+        <%= f.text_field :option_b, class: 'form-control' %>
+        <%= f.label :option_c %>
+        <%= f.text_field :option_c, class: 'form-control' %>
+        <%= f.label :option_d %>
+        <%= f.text_field :option_d, class: 'form-control' %>
+        <h5>Enter the answer in string format for e.g A and B are correct enter AB</h5>
+        <%= f.label :answer %>
+        <%= f.text_field :answer, class: 'form-control' %>
+
+        <%= f.submit "Addquestion", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

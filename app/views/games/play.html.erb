@@ -1,0 +1,60 @@
+<% provide(:title, 'Play Game') %>
+<h1 class="text-center">Question</h1>
+
+<h2>Score: <%= @score1 %></h2>
+
+<%=	 form_for(update_path, :html => {:class => 'form-horizontal'}) do |f| %>
+
+    <% if @question.q_type=="image" %>
+        <p class="text-center">      <%= image_tag(@question.id, style: "text-align:center;")%>
+        </p>
+    <% end %>
+
+    <table class="table table-striped table-hover">
+      <thead style="font-size: 1.5em;">
+      <tr>
+
+        <th>Q. </th>
+        <th><%=@question.content %></th>
+      </tr>
+      </thead>
+      <tbody style="font-size: 1.2em;">
+      <tr>
+        <td>
+          <input type="checkbox" value="A" id="squaredOne" name="one" class="form-control">
+        </td>
+        <td>
+          <label for="squaredOne" class="form-control"><%=@question.option_a %></label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" value="B" id="squaredTwo" name="two" class="form-control">
+        </td>
+        <td>
+          <label for="squaredTwo" class="form-control"><%=@question.option_b %></label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" value="C" id="squaredThree" name="three" class="form-control">
+        </td>
+        <td>
+          <label for="squaredThree" class="form-control"><%=	 @question.option_c %></label>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="checkbox" value="D" id="squaredFour" name="four" class="form-control">
+        </td>
+        <td>
+          <label for="squaredFour" class="form-control"><%=	 @question.option_d %></label>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <input type="hidden" value="<%= @qzid %>" name="quiz_id">
+    <input type="hidden" value="<%= @question.id %>" name="question_id">
+    <input type="submit" class="btn btn-primary">
+    <br><br>
+<% end %>

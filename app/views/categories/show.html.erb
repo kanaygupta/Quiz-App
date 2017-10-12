@@ -1,0 +1,28 @@
+<% provide(:title, @category.name) %>
+<div class="row">
+  <aside class="col-md-12">
+    <section class="category_info">
+      <h1 style="text-align: center;font-size:50px">
+        <%= @category.name %>
+      </h1>
+      <br>
+
+      <table class="table table-striped table-bordered table-hover" style="table-layout: fixed">
+        <thead>
+        <tr>
+          <th>Subcategory Name</th>
+          <th>View Quizzes</th>
+          <th>View Leaderboard</th>
+          <% if current_user.admin? %>
+              <th>Delete Subcategory</th>
+          <% end %>
+        </tr>
+        </thead>
+        <tbody>
+        <%= render @subcategories %>
+        </tbody>
+      </table>
+
+    </section>
+  </aside>
+</div>

@@ -1,0 +1,25 @@
+<div class="center jumbotron" style="height: auto">
+  <br><br><br>
+  <% current_user %>
+  <% if @current_user!=nil %>
+    <%= link_to image_tag("QuizUp_Logo.png"), categories_path %>
+  <% else %>
+      <%= image_tag("QuizUp_Logo.png") %>
+  <% end %>
+
+  <h1>Welcome to QUIZ UP</h1>
+  <br><br><br>
+  <h2 style="font-size: 25px">
+Do you have what it takes to beat the quiz? Let's find out.
+  </h2>
+  <br><br><br>
+
+  <% if @current_user==nil %>
+  <%= link_to "Login now!", login_path, class: "btn btn-lg btn-primary" %>
+      <% else %>
+      <%= link_to "PlayNow!", categories_path, class: "btn btn-lg btn-primary" %>
+
+
+<%end%>
+</div>
+
